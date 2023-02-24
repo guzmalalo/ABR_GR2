@@ -76,8 +76,18 @@ void afficheInfixe(Node * arbre){
     if (arbre == NULL)
         return;
     afficheInfixe(arbre->sag);
-    printf("%d: %s\t", arbre->n,arbre->nom );
+    printf("%d \t", arbre->n,arbre->nom );
     afficheInfixe(arbre->sad);
+}
+
+void affichePrefixe(Node * arbre){
+
+    if(arbre !=NULL){
+        printf("%d ", arbre->n);
+        affichePrefixe(arbre->sag);
+        affichePrefixe(arbre->sad);
+    }
+
 }
 
 
@@ -99,6 +109,7 @@ int main()
     printf(" \n Infixe \n");
     afficheInfixe(arbre);
     printf(" \n Prefixe \n");
+    affichePrefixe(arbre);
     printf(" \n Postfixe \n");
 
     libereArbre(&arbre);
