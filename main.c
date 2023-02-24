@@ -87,9 +87,16 @@ void affichePrefixe(Node * arbre){
         affichePrefixe(arbre->sag);
         affichePrefixe(arbre->sad);
     }
-
 }
 
+void affichePostfixe(Node * arbre){
+
+    if(arbre !=NULL){
+        affichePostfixe(arbre->sag);
+        affichePostfixe(arbre->sad);
+        printf("%d ", arbre->n);
+    }
+}
 
 
 int main()
